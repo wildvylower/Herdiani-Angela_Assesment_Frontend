@@ -167,7 +167,7 @@ function Daashboard() {
     const handleLogout = () => {
         localStorage.clear();
         document.cookie.split(";").forEach((c) => {
-            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date(0).toUTCString() + ";path=/");
         });
         window.location.href = '/';
     };
