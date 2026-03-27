@@ -1,7 +1,7 @@
-import '../index.css'
+import './index.css'
 import { Routes, Route, Navigate } from "react-router-dom";
-import Login from './Login';
-import Daashboard from './Daashboard';
+import Login from './screen/Login';
+import Daashboard from './screen/Daashboard';
 
 const AuthGuard = ({ children }) => {
   const token = localStorage.getItem('token');
