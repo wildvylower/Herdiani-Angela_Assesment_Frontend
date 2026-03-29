@@ -177,8 +177,12 @@ function Daashboard() {
             <div className="flex flex-col md:flex-row justify-between w-full mb-6 items-start md:items-center gap-4">
                 <h1 className="text-xl md:text-2xl lg:text-3xl text-[#474344] font-bold">Package Lists</h1>
                 <div className="flex gap-3 w-full md:w-auto">
-                    <button onClick={handleExportPDF} className="flex-1 md:flex-none bg-[#9CDCF7] text-[#474344] px-4 py-2 text-base md:text-lg lg:text-xl rounded-lg font-bold shadow-md hover:brightness-90 transition-all">Export PDF</button>
-                    <button onClick={() => openModal()} className="flex-1 md:flex-none bg-[#4D8066] text-[#FEFBF8] px-4 py-2 text-base md:text-lg lg:text-xl rounded-lg font-bold shadow-md hover:brightness-90 transition-all">+ Add New</button>
+                    <button onClick={handleExportPDF} className="flex-1 md:flex-none bg-[#9CDCF7] text-[#474344] px-4 py-2 text-base md:text-lg lg:text-xl rounded-lg font-bold shadow-md hover:brightness-90 transition-all">
+                        Export PDF
+                    </button>
+                    <button onClick={() => openModal()} className="flex-1 md:flex-none bg-[#4D8066] text-[#FEFBF8] px-4 py-2 text-base md:text-lg lg:text-xl rounded-lg font-bold shadow-md hover:brightness-90 transition-all">
+                        + Add New
+                    </button>
                 </div>
             </div>
 
@@ -201,8 +205,12 @@ function Daashboard() {
                             <input type="number" placeholder="Price" className="border p-3 text-base md:text-lg rounded outline-none focus:ring-1 focus:ring-emerald-500" value={formData.price} onChange={(e) => setFormData({...formData, price: e.target.value})} required />
                             <input type="number" placeholder="Duration" className="border p-3 text-base md:text-lg rounded outline-none focus:ring-1 focus:ring-emerald-500" value={formData.duration} onChange={(e) => setFormData({...formData, duration: e.target.value})} required />
                             <div className="flex gap-2 justify-end mt-4">
-                                <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 text-base md:text-lg text-gray-400 font-bold">Cancel</button>
-                                <button type="submit" className="bg-[#4D8066] text-white px-8 py-2 text-base md:text-lg rounded-lg font-bold">Save</button>
+                                <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 text-base md:text-lg text-gray-400 font-bold">
+                                    Cancel
+                                </button>
+                                <button type="submit" className="bg-[#4D8066] text-white px-8 py-2 text-base md:text-lg rounded-lg font-bold">
+                                    Save
+                                </button>
                             </div>
                         </form>
                     </div>
