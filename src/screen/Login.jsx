@@ -30,7 +30,7 @@ function Login(){
                     <h1 className="text-base md:text-xl lg:text-2xl text-[#474344] font-bold my-2">Hello!</h1>
                     <h2 className="text-xs md:text-sm lg:text-base text-[#474344] my-2">Login to enter</h2>
                     <input 
-                        type="username"
+                        type="text"
                         placeholder="Username"
                         className="w-full p-4 my-2 border border-gray-300 rounded-4xl focus:outline-none focus:ring-2 focus:ring-[#4D8066]"
                         value={username}
