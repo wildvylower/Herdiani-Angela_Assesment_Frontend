@@ -67,7 +67,7 @@ function Daashboard() {
             setTableData(response.data?.data || []);
             setLoading(false);
         } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error('Error fetching data:', error.response ? error.response.data.message : error.message);
             setLoading(false);
         }
     }
@@ -109,7 +109,7 @@ function Daashboard() {
             setShowDeleteModal(false);
             setRefreshTrigger(prev => prev + 1);
         } catch (error) {
-            alert('Gagal menghapus data');
+            alert(`Gagal menghapus data: ${error.response ? error.response.data.message : error.message}`);
         }
     };
 
@@ -130,7 +130,7 @@ function Daashboard() {
             const blob = doc.output('blob');
             window.open(URL.createObjectURL(blob));
         } catch (error) {
-            alert('Gagal export PDF');
+            alert(`Gagal export PDF: ${error.response ? error.response.data.message : error.message}`);
         }
     };
 
@@ -160,7 +160,7 @@ function Daashboard() {
             setShowModal(false);
             setRefreshTrigger(prev => prev + 1);
         } catch (error) {
-            alert('Operasi gagal');
+            alert(`Operasi gagal: ${error.response ? error.response.data.message : error.message}`);
         }
     };
 
