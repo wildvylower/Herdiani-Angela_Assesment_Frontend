@@ -149,16 +149,21 @@ function Daashboard() {
             package_duration: Number(formData.duration),
             package_is_active: formData.isActive,
         };
-
+        {/*ditambahkan karena ternyata nama yg sudah ada tidak bisa ditambahkan */}
         try {
+            let response;
             if (isEdit) {
-                await axios.put(url, payload, { headers: { Authorization: `Bearer ${token}` } });
+                response = await axios.put(url, payload, { headers: { Authorization: `Bearer ${token}` } });
             } else {
-                await axios.post(url, payload, { headers: { Authorization: `Bearer ${token}` } });
+                response =await axios.post(url, payload, { headers: { Authorization: `Bearer ${token}` } });
             }
-            alert(`Data berhasil ${isEdit ? 'diperbarui' : 'ditambahkan'}`);
-            setShowModal(false);
-            setRefreshTrigger(prev => prev + 1);
+            if (response.data.result) {
+                alert(`Data berhasil ${isEdit ? 'diperbarui' : 'ditambahkan'}`);
+                setShowModal(false);
+                setRefreshTrigger(prev => prev + 1);
+            } else {
+                alert(`Operasi gagal: ${response.data.message}`);
+            }
         } catch (error) {
             alert(`Operasi gagal: ${error.response ? error.response.data.message : error.message}`);
         }
